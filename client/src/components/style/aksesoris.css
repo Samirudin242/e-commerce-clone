@@ -1,0 +1,39 @@
+.aksesoris-container {
+  margin-top: 2rem;
+  border-top: 1px solid #d7d8da;
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: 83% 17%;
+}
+
+.aksesoris-container-content1 > h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.aksesoris {
+  display: flex;
+  justify-content: space-between;
+}
+
+.aksesoris-container-content2 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.aksesoris-container-content2 > .router {
+  text-decoration: none;
+  color: #34be52;
+  cursor: pointer;
+  height: 25px;
+}
+
+.aksesoris-container-content2 > p {
+  color: #34be52;
+  cursor: pointer;
+}
+
+.aksesoris-container-content2 > .router:hover {
+  color: #12883d;
+}

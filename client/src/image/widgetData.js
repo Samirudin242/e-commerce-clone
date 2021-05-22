@@ -1,0 +1,26 @@
+export const widgetData = [
+  {
+    image:
+      "https://images.tokopedia.net/img/cache/200-square/attachment/2018/8/12/3127195/3127195_0ff4288f-be91-4868-9d17-bfe3b4d23890.png.webp?ect=4g",
+  },
+  {
+    image:
+      "https://images.tokopedia.net/img/cache/200-square/attachment/2018/12/14/26958584/26958584_601588be-4687-45f6-b7e7-0836f3ecd303.jpg.webp?ect=4g",
+  },
+  {
+    image:
+      "https://images.tokopedia.net/img/cache/200-square/attachment/2018/8/12/3127195/3127195_0e8b1f03-aaf2-4d6b-9d2d-76c0ef419f7c.jpg.webp?ect=4g",
+  },
+  {
+    image:
+      "https://images.tokopedia.net/img/cache/200-square/attachment/2018/8/12/3127195/3127195_2fb97bc9-e5e8-47c9-9d66-d49a60f2bc6f.png.webp?ect=4g",
+  },
+  {
+    image:
+      "https://images.tokopedia.net/img/cache/200-square/attachment/2018/8/12/3127195/3127195_753042c3-b518-4099-be45-da208450960d.jpg.webp?ect=4g",
+  },
+  {
+    image:
+      "https://images.tokopedia.net/img/cache/200-square/attachment/2018/11/29/26958584/26958584_a8ccc9a9-4622-4a55-ae3a-6fcab8b60b00.jpg.webp?ect=4g",
+  },
+];

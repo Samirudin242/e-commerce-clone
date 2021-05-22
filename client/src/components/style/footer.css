@@ -1,0 +1,29 @@
+.footer-content {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  border-top: 1px solid #d7d8da;
+  border-bottom: 1px solid #d7d8da;
+  padding: 20px 0px 20px 0px;
+}
+
+.footer-content-logo {
+  display: flex;
+  margin-left: 7.8vw;
+  align-items: center;
+}
+
+.footer-content-logo > p {
+  margin-left: 15px;
+  font-size: 14px;
+}
+
+.footer-content-medsos {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 7.8vw;
+  align-items: center;
+}
+
+.footer-content-medsos > p {
+  margin-right: 15px;
+}

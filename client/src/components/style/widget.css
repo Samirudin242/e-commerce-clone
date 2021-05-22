@@ -1,0 +1,321 @@
+.widget-card {
+  height: 296px;
+  width: 1208px;
+  background: white;
+  box-shadow: 0 0 3px rgb(146, 141, 141);
+  margin: 0 auto;
+  border-radius: 10px;
+  margin-top: 3rem;
+  font-family: "open sans", tahoma, sans-serif;
+  padding: 16px 26px 0px 16px;
+}
+
+.widget-card-content {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  /* padding: 16px; */
+}
+.widget-card-content-1 > h2 {
+  margin-bottom: 1.5rem;
+}
+
+.small-card {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.small-card .card {
+  height: 131px;
+  width: 131px;
+  border: 1px solid #d7d8da;
+  border-radius: 10px;
+}
+
+.small-card .card > img {
+  margin-left: 4px;
+  margin-top: 5px;
+}
+
+.left-arrow-widget {
+  position: absolute;
+  top: 7.5vh;
+  left: 1vw;
+  color: rgb(146, 141, 141);
+  cursor: pointer;
+  display: none;
+}
+
+.right-arrow-widget {
+  position: absolute;
+  top: 7.5vh;
+  right: 1vw;
+  color: rgb(146, 141, 141);
+  display: none;
+  cursor: pointer;
+}
+
+.small-card:hover .left-arrow-widget {
+  display: block;
+}
+
+.small-card:hover .right-arrow-widget {
+  display: block;
+}
+
+.widget {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+
+.widget-active {
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale(1.08);
+}
+
+.widget-card-content-2 {
+  margin-left: 20px;
+}
+
+.widget-card-content-2 > h2 {
+  margin-bottom: 1.5rem;
+}
+.widget-card-content-2 > h2 > span {
+  color: #34be52;
+  font-size: 16px;
+  cursor: pointer;
+}
+.widget-card-content-2 > h2 > span:hover {
+  color: #12883d;
+}
+
+.card-content-2 {
+  height: 131px;
+  width: 565px;
+  border: 1px solid #d7d8da;
+  border-radius: 10px;
+}
+
+.card-content-2-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px solid #d7d8da;
+  height: 40px;
+  color: #928d8d;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.card-content-2-menu > p {
+  cursor: pointer;
+}
+.expand-menu {
+  position: relative;
+}
+
+.expand-menu-dot {
+  position: absolute;
+  border: 1px solid #d7d8da;
+  height: 465px;
+  width: 175px;
+  padding-left: 10px;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0px 1px 10px -2px rgba(210, 194, 194, 0.75);
+}
+
+.expand-menu-dot > p {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 33px;
+  cursor: pointer;
+}
+
+.expand-menu-dot > p:hover {
+  color: #fa591d;
+}
+
+.icon-dot {
+  border-left: 1px solid #d7d8da;
+  height: 40px;
+  cursor: pointer;
+}
+.pulsa {
+  font-size: 16px;
+  color: #34be52;
+}
+
+.data {
+  font-size: 16px;
+  color: #34be52;
+}
+
+.listrik {
+  font-size: 16px;
+  color: #34be52;
+}
+
+.widget-card-content-pulsa {
+  padding: 10px;
+}
+
+.widget-card-content-pulsa-text {
+  display: grid;
+  grid-template-columns: 44% 50%;
+  color: #928d8d;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.widget-card-content-pulsa-form {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+}
+
+.widget-card-content-pulsa-form > select {
+  width: 225px;
+  border: 1px solid #34be52;
+  border-radius: 10px;
+  width: 225px;
+  outline: none;
+  padding-left: 8px;
+  cursor: pointer;
+}
+
+.input-hp {
+  border: 1px solid #34be52;
+  border-radius: 10px;
+  width: 225px;
+  display: flex;
+}
+
+.input-hp > img {
+  height: 20px;
+  align-self: center;
+  margin-right: 10px;
+}
+
+.input-hp > input {
+  height: 30px;
+  width: 200px;
+  border: none;
+  outline: none;
+  padding-left: 8px;
+  margin-top: 2px;
+  margin-left: 2px;
+}
+
+.widget-card-content-pulsa-form > button {
+  width: 70px;
+  border-radius: 10px;
+  border: none;
+  background-color: #fa591d;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.widget-card-container::-webkit-scrollbar {
+  display: none;
+}
+.widget-card-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.widget-card-menu-button::-webkit-scrollbar {
+  display: none;
+}
+
+.widget-card-menu-button {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.widget-card-content-listrik {
+  display: grid;
+  grid-template-columns: 29% 29% 29% 10%;
+  /* margin-top: 10px; */
+  color: #807b7b;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 10px;
+}
+
+.widget-card-content-listrik-token > p {
+  margin-bottom: 10px;
+}
+
+.widget-card-content-listrik-token > select {
+  border: 1px solid #34be52;
+  border-radius: 10px;
+  width: 150px;
+  outline: none;
+  padding-left: 8px;
+  cursor: pointer;
+  height: 40px;
+}
+.widget-card-content-listrik-token > input {
+  border: 1px solid #34be52;
+  border-radius: 10px;
+  width: 150px;
+  outline: none;
+  padding-left: 8px;
+  cursor: pointer;
+  height: 40px;
+}
+
+.listrik-button {
+  margin-top: 1.5rem;
+}
+
+.listrik-button > button {
+  width: 70px;
+  border-radius: 10px;
+  border: none;
+  background-color: #fa591d;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  height: 40px;
+}
+
+.widget-card-menu {
+  overflow: auto scroll;
+  margin-top: 25px;
+}
+.widget-card-container {
+  display: flex;
+  overflow: auto scroll;
+  /* padding: 10px; */
+  width: 1990px;
+  justify-content: space-between;
+}
+
+.widget-card-menu-button {
+  display: flex;
+  overflow: scroll;
+  float: left;
+  border: 1px solid #d7d8da;
+  border-radius: 20px;
+  padding: 6px 12px 6px 12px;
+  height: 40px;
+  align-items: center;
+}
+
+.widget-card-menu-button > p {
+  font-size: 14px;
+  color: #928d8d;
+  margin-left: 5px;
+}

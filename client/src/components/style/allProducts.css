@@ -1,0 +1,45 @@
+.container-all-products {
+  margin: 3rem 7.8vw;
+}
+
+.sorting-products {
+  cursor: pointer;
+  position: relative;
+}
+
+.sorting-products > p {
+  border: solid 1px #c0c7d1;
+  height: 44px;
+  width: 260px;
+  padding: 12px;
+  border-radius: 5px;
+}
+
+.sorting-products > p > .sorting-name {
+  margin-left: 5px;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.sorting-products-menu {
+  position: absolute;
+  border: solid 1px #c0c7d1;
+  height: 220px;
+  width: 260px;
+  line-height: 40px;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.sorting-products-menu > p:hover {
+  background-color: #f7f8f8;
+}
+
+.card-products {
+  display: grid;
+  grid-template-columns: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
+  margin: 20px 0px 20px 0px;
+  grid-row-gap: 20px;
+}

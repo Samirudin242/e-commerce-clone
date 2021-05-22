@@ -1,0 +1,10 @@
+.palugada-container > h2 {
+  margin-top: 0px;
+  margin-bottom: 2rem;
+  font-size: 28px;
+  font-weight: 600;
+}
+.palugada {
+  display: flex;
+  justify-content: space-between;
+}

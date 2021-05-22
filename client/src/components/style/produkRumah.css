@@ -1,0 +1,12 @@
+.produk-container > h2 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 28px;
+  font-weight: 600;
+  border-top: 1px solid #d7d8da;
+  padding-top: 2rem;
+}
+.produk {
+  display: flex;
+  justify-content: space-between;
+}
