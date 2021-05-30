@@ -5,6 +5,8 @@ const port = process.env.PORT || 8000;
 const cors = require("cors");
 const mongo = require("./config/config");
 
+const server = require("./orchestrator/index");
+
 mongo.connect(function (err) {
   if (!err) {
     app.use(express.json());
