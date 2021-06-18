@@ -37,10 +37,9 @@ function AllProducts() {
     const [sorting, setSorting] = useState("Termurah");
     const [datas, setDatas] = useState(null);
 
-    // useEffect(async() => {
-    //     const productsData =  await data.produks
-    //     setDatas(productsData)
-    // }, [])
+    useEffect(() => {
+        document.title = "All Product | React App"
+    }, [])
 
     const setExpandMenu = () => {
         setExpand(!isExpand)

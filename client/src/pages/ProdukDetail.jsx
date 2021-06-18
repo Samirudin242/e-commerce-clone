@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {useParams} from "react-router-dom";
 import "../components/style/produkDetail.css";
 
@@ -9,6 +9,10 @@ import Footer from "../components/Footer";
 function ProdukDetail() {
 
     const {id} = useParams
+
+    useEffect(() => {
+        document.tittle = "Produk Detail | React App"
+    }, [])
 
     return (
         <div>

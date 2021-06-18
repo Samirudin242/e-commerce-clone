@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import {Link} from "react-router-dom";
+import Login from "./Login"
 import "./style/InputForm.css";
 //icons
 import { GiSmartphone } from "react-icons/gi";
@@ -15,7 +17,22 @@ import logo from "../image/tokopedia.png";
 import ux1 from "../image/ux-1.png";
 
 function InputForm() {
+
+  const [isLogin, setIslogin] = useState("");
+  const [showRegister, setShowRegister] = useState(false);
+
+  useEffect(() => {
+    setIslogin(localStorage.getItem("user"))
+  }, [])
+
+  function setRegister() {
+
+    setShowRegister(!showRegister);
+  } 
+
   return (
+    <div>
+      {showRegister && <Login closePage={() => setRegister()} className="register-form"/>}
     <div>
       <div className="header-top">
         <div className="header-top-right">
@@ -30,7 +47,32 @@ function InputForm() {
           <p>Tokopedia Care</p>
         </div>
       </div>
-      <div className="header-input">
+      {
+      !isLogin && <div className="header-input">
+        <div className="header-input-1">
+          <img src={logo} width="155" height="55" />
+          <p>Kategori</p>
+        </div>
+      <div className="header-input-2">
+          <div className="header-input-2-form">
+          <input type="text" />
+            <div className="logo-search">
+              <span>
+                <BiSearch size={20} />
+              </span>
+            </div>
+          </div>
+        </div>
+        <div>      
+          <div className="button-login-register">
+              <button onClick={setRegister} className="button-login">Masuk</button>
+              <button className="button-register">Daftar</button>
+          </div>
+        </div>
+      </div>
+      }
+      
+      {isLogin && <div className="header-input">
         <div className="header-input-1">
           <img src={logo} width="155" height="55" />
           <p>Kategori</p>
@@ -46,7 +88,6 @@ function InputForm() {
           </div>
           <span className="logo-1">
             <MdShoppingCart size={20} />
-
             <div className="cart-hover">
               <img src={ux1} alt="empty cart" width="200px" />
               <p>Wah keranjang belanjaanmu kosong!</p>
@@ -82,7 +123,8 @@ function InputForm() {
             <p>Samirudin</p>
           </div>
         </div>
-      </div>
+      </div>}
+      
       <div className="header-bottom">
         <div className="header-bottom-1">
           <p>Pompa Galon Elektrik</p>
@@ -100,6 +142,7 @@ function InputForm() {
           <BiChevronDown />
         </div>
       </div>
+    </div>
     </div>
   );
 }

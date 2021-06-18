@@ -1,0 +1,67 @@
+.register {
+    margin: 0px 30px
+}
+.register img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+}
+
+.register-form {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+}
+
+.register .logo p:nth-child(2) {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    color: rgb(77, 73, 73);
+}
+
+.register .logo p:nth-child(3) {
+    text-align: center;
+    font-size: 14px;
+    color: rgb(77, 73, 73);
+    margin-top: 5px;
+}
+
+.form-register {
+    width: 400px;
+    height: 600px;
+    border: solid 1px #d4cfcf;
+    padding: 0px 35px;
+    -webkit-box-shadow: 4px 4px 10px -3px #7A7A7A; 
+    box-shadow: 4px 4px 10px -3px #7A7A7A;
+    border-radius: 4px;
+}
+
+.form-register form p {
+    text-align: center;
+    font-size: 23px;
+    font-weight: 600;
+    margin-top: 15px;
+    color:rgb(71, 69, 69);
+    margin-bottom: 25px;
+}
+
+.form-register form .form-register-label label{
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: rgb(146, 141, 141);
+    margin-bottom: 5px;
+}
+
+.form-register form .form-register-label input {
+    width: 100%;
+    height: 45px;
+    padding: 3px 10px;
+    border-radius: 6px;
+    border: 1px solid #34be52;
+    font-size: 17px;
+    margin-bottom: 20px;
+    outline: none;
+}
