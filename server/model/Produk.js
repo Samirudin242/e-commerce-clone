@@ -4,6 +4,7 @@ const produkSchema = new Schema({
   name: String,
   image: String,
   price: String,
+  discount: String,
   type: String,
   rating: String,
   sold: String,
@@ -13,4 +14,4 @@ const produkSchema = new Schema({
   createdAt: String,
 });
 
-module.exports = model("Produk", produkSchema);
+module.exports = model("produk", produkSchema);
