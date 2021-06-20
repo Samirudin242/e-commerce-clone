@@ -6,7 +6,6 @@ import {moneyConver, moneyFormat} from "../helper/moneyConver";
 
 function Card(props) {
   const {datas} = props;
-  // console.log(moneyFormat(Number(moneyConver(data.price)) - ((Number(data.discount)/100) * Number(moneyConver(data.price)))));
 
   return (
     <>

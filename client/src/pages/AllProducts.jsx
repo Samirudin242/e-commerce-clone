@@ -13,7 +13,7 @@ import Card from "../components/Card";
 
 const getAllDataProducts = gql`
     query getAllData {
-        produks {
+        getProduks {
             _id
             image
             name
@@ -93,7 +93,7 @@ function AllProducts() {
                 )}
             </div>
             <div className="card-products">
-                {datas !== null ? <Card datas={datas}/> : <Card datas={data.produks}/>}
+                {datas !== null ? <Card datas={datas}/> : <Card datas={data.getProduks}/>}
                 {/* <Card datas={data.produks}/> */}
             </div>
             </div>

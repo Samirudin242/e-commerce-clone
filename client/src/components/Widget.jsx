@@ -249,7 +249,7 @@ function Widget({ widget }) {
         <div className="widget-card-container">
           {widgetMenu.map((widget, idx) => {
             return (
-              <div className="widget-card-menu-button">
+              <div key={idx} className="widget-card-menu-button">
                 <img
                   height="24"
                   width="24"

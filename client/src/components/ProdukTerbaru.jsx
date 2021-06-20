@@ -5,7 +5,7 @@ import "./style/produkTerbaru.css";
 
 const terbaruProduk = gql`
   query getDataByType {
-    produkFilter(type: "produk terbaru") {
+    getProdukByType(type: "produk terbaru") {
       _id
       image
       name
@@ -42,7 +42,7 @@ function ProdukTerbaru() {
       <div className="terbaru-container-content1">
         <h2>Serbu Seru Produk Terbaru</h2>
         <div className="terbaru">
-          <Card datas={getData(data.produkFilter)}/>
+          <Card datas={getData(data.getProdukByType)}/>
         </div>
       </div>
       <div className="terbaru-container-content2">

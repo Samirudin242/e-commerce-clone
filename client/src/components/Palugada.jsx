@@ -6,8 +6,8 @@ import Card from "./Card";
 
 
 const palugadaProduks =  gql`
-  query getDataByType {
-    produkFilter(type: "palugada") {
+  query getProdukByType {
+    getProdukByType(type: "palugada") {
       _id
       image
       name
@@ -36,7 +36,7 @@ function Palugada() {
     <div className="palugada-container">
       <h2>Produk Palugada Terlaris</h2>
       <div className="palugada">  
-        <Card datas={data.produkFilter}/>
+        <Card datas={data.getProdukByType}/>
       </div>
     </div>
   );

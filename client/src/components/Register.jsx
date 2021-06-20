@@ -1,29 +1,19 @@
 import React, { useEffect, useState, useContext } from "react";
 import {gql, useMutation} from "@apollo/client";
+import {useHistory} from "react-router-dom";
 import logo from "../image/tokopedia.png";
 
 import "./style/register.css";
 import { AuthContext } from "../context/auth";
 
 const REGISTER_USER = gql`
-  mutation register(
-    $name: String
-    $location: String
-    $email: String
-    $password: String
-  ) {
-    register(registerInput: {
-      name: $name
-      location: $location
-      email: $email
-      password: $password
-    }
-    ) {
-      _id
-      name
-      location
+  mutation register($registerInput: RegisterInput) {
+    register(registerInput: $registerInput) {
+      id
       email
-      password      
+      name
+      token
+      location
     }
   }
 `;
@@ -31,8 +21,8 @@ const REGISTER_USER = gql`
 
 function Register() {
 
-    // const context = useContext(AuthContext);
-
+    const context = useContext(AuthContext);
+    const history = useHistory()
     const [name, setName] = useState("");
     const [location, setLocation] = useState("");
     const [email, setEmail] = useState("");
@@ -41,16 +31,17 @@ function Register() {
     const isInvalid = name === "" || location === "" || email === "" || password === "";
 
     const [addUser, {loading}] = useMutation(REGISTER_USER, {
-      update(_, result) {
-        console.log(result);
+      update(_, {data: {register: newUser}}) {
+        context.login(newUser)
+        history.push("/")
       },
       variables: { 
-      // addUser: {
+      registerInput: {
         name: name,
-        location: location,
+        password: password,
         email: email,
-        password: password
-      // }
+        location: location,
+      }
     }
     })
 

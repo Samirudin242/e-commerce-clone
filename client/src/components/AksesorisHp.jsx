@@ -6,8 +6,8 @@ import Card from "./Card";
 import "./style/aksesoris.css";
 
 const aksesorisProduk = gql`
-  query getDataByType {
-    produkFilter(type: "aksesoris") {
+  query getProdukByType {
+    getProdukByType(type: "aksesoris") {
       _id
       image
       name
@@ -47,7 +47,7 @@ function AksesorisHp() {
       <div className="aksesoris-container-content1">
         <h2>Aksesoris HP Terlaris</h2>
         <div className="aksesoris">
-          <Card datas={getData(data.produkFilter)}/>
+          <Card datas={getData(data.getProdukByType)}/>
         </div>
       </div>
       <div className="aksesoris-container-content2">

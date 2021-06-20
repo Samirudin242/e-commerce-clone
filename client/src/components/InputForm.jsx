@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {Link} from "react-router-dom";
 import Login from "./Login"
+import {AuthContext} from "../context/auth";
 import "./style/InputForm.css";
 //icons
 import { GiSmartphone } from "react-icons/gi";
@@ -17,12 +18,13 @@ import logo from "../image/tokopedia.png";
 import ux1 from "../image/ux-1.png";
 
 function InputForm() {
-
+  const {user, logout} = useContext(AuthContext);
+  // console.log(user, "<<<<");
   const [isLogin, setIslogin] = useState("");
   const [showRegister, setShowRegister] = useState(false);
 
   useEffect(() => {
-    setIslogin(localStorage.getItem("user"))
+    setIslogin(localStorage.getItem("jwtToken"))
   }, [])
 
   function setRegister() {
@@ -66,7 +68,9 @@ function InputForm() {
         <div>      
           <div className="button-login-register">
               <button onClick={setRegister} className="button-login">Masuk</button>
+              <Link to="/register">
               <button className="button-register">Daftar</button>
+              </Link>
           </div>
         </div>
       </div>
@@ -120,7 +124,7 @@ function InputForm() {
           </div>
           <div className="header-input-3-user">
             <FaUserCircle size={20} />
-            <p>Samirudin</p>
+            <p>{user?.name}</p>
           </div>
         </div>
       </div>}
@@ -134,13 +138,15 @@ function InputForm() {
           <p>Iphone 12 Pro</p>
           <p>Tangga Lipat</p>
         </div>
+          {user && (
         <div className="header-bottom-2">
           <GoLocation size={13} className="logo-location" />
           <p>
-            Dikirim ke <span>Rumah Samirudin</span>
+            Dikirim ke <span>Rumah {user.name}</span>
           </p>
           <BiChevronDown />
         </div>
+          )}
       </div>
     </div>
     </div>
