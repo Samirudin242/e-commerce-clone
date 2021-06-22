@@ -7,3 +7,150 @@
 .card-detail-image > img {
   border-radius: 10px;
 }
+
+.card-detail-description  {
+  font-size: 14px;
+}
+
+.card-detail-description > p:nth-child(1) {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.detail-rating {
+  display: flex;
+  align-items: center;
+  width: 220px;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.detail-rating .dot {
+  background-color: #d9dadb;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+}
+
+.price-detail {
+  font-size: 28px;
+  font-weight: 800;
+  margin-top: 20px;
+}
+
+.card-detail-stock {
+  height: 289px;
+  width: 268px;
+  border: 1px solid #e5e7e9;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.card-detail-stock > p {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.card-stock-number {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.card-stock-number > p {
+  margin-left: 20px;
+}
+
+.number-stock {
+  font-weight: 700;
+}
+
+.card-stock-input {
+  display: flex;
+}
+
+.card-stock-input >input {
+  width:60px;
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid #e5e7e9;
+  outline: none;
+  padding: 0 3px;
+  font-size: 18px;
+  text-align: center; 
+}
+
+.card-detail-price {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.card-detail-price > p:nth-child(1) {
+  color: #b3b5b6;
+}
+
+.card-detail-price > p:nth-child(2) {
+  font-weight: 500;
+  font-size: large;
+}
+
+.button-stock {
+  color: #03ac0e
+}
+
+.button-stock > button {
+  display: block;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-stock > button:nth-child(1) {
+  background-color: #03ac0e;
+  border: none;
+  color: white;
+  font-size: 14px;
+  font-weight: 800;
+  margin: 10px 0;
+}
+
+.button-stock > button:nth-child(2) {
+  border:#03ac0e 1px solid;
+  color: #03ac0e;
+  background-color: white;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.detail-shop {
+  display: grid;
+  grid-template-columns: 10% 60% 30%;
+  margin-top: 40px;
+  border-top: 1px solid #e5e7e9;
+  width: 350px;
+  padding-top: 20px;
+}
+
+.detail-shop > button {
+  height: 32px;
+  width: 98px;
+  border-radius: 5px;
+  border:#03ac0e 1px solid;
+  color: #03ac0e;
+  background-color: #ffff;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.shop-information {
+  margin-left: 20px;
+  line-height: 25px;
+}
+
+.shop-information > p:nth-child(1) {
+  font-size: 16px;
+  font-weight: 700;
+}

@@ -52,7 +52,9 @@ function InputForm() {
       {
       !isLogin && <div className="header-input">
         <div className="header-input-1">
+          <Link to="/">
           <img src={logo} width="155" height="55" />
+          </Link>
           <p>Kategori</p>
         </div>
       <div className="header-input-2">
@@ -78,7 +80,9 @@ function InputForm() {
       
       {isLogin && <div className="header-input">
         <div className="header-input-1">
+          <Link to="/">
           <img src={logo} width="155" height="55" />
+          </Link>
           <p>Kategori</p>
         </div>
         <div className="header-input-2">

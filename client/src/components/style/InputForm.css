@@ -61,6 +61,7 @@
   align-items: center;
   justify-content: space-around;
   border-right: 2px solid #f3f4f5;
+  /* padding: px 0; */
 }
 
 .header-input-2 .logo {

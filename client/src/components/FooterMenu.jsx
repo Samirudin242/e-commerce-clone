@@ -9,38 +9,38 @@ function FooterMenu() {
     <div className="footer-menu-container">
       <div className="footer-menu-content">
         <div className="footer-content-main">
-          <a href="#">BukaBantuan (Hubungi Kami)</a>
-          <a href="#">FAQ (Tanya Jawab)</a>
-          <a href="#">Panduan Belanja</a>
-          <a href="#">Panduan Pelapak</a>
-          <a href="#">Panduan Keamanan</a>
+          <a>BukaBantuan (Hubungi Kami)</a>
+          <a>FAQ (Tanya Jawab)</a>
+          <a>Panduan Belanja</a>
+          <a>Panduan Pelapak</a>
+          <a>Panduan Keamanan</a>
         </div>
         <div className="footer-content-bukalapak">
           <h3>Bukalapak</h3>
-          <a href="#">Tentang Bukalapak</a>
-          <a href="#">Aturan Penggunaan</a>
-          <a href="#">Kebijakan Privasi</a>
-          <a href="#">Karir di Bukalapak</a>
-          <a href="#">Vulnerability Reports</a>
-          <a href="#">Blog Bukalapak</a>
-          <a href="#">Affiliate Program</a>
-          <a href="#">FAQ (Tanya Jawab</a>
+          <a>Tentang Bukalapak</a>
+          <a>Aturan Penggunaan</a>
+          <a>Kebijakan Privasi</a>
+          <a>Karir di Bukalapak</a>
+          <a>Vulnerability Reports</a>
+          <a>Blog Bukalapak</a>
+          <a>Affiliate Program</a>
+          <a>FAQ (Tanya Jawab</a>
         </div>
         <div className="footer-content-bukalapak">
           <h3>Pembeli</h3>
-          <a href="#">Cara Belanja</a>
-          <a href="#">Pembayaran</a>
-          <a href="#">Jaminan Aman</a>
-          <a href="#">Halaman Tag</a>
-          <a href="#">Jasa Pengadaan</a>
-          <a href="#">Promo</a>
-          <a href="#">BukaReview</a>
+          <a>Cara Belanja</a>
+          <a>Pembayaran</a>
+          <a>Jaminan Aman</a>
+          <a>Halaman Tag</a>
+          <a>Jasa Pengadaan</a>
+          <a>Promo</a>
+          <a>BukaReview</a>
         </div>
         <div className="footer-content-bukalapak">
           <h3>Pelapak</h3>
-          <a href="#">Cara Berjualan</a>
-          <a href="#">Keuntungan Jualan</a>
-          <a href="#">Indeks Merek</a>
+          <a>Cara Berjualan</a>
+          <a>Keuntungan Jualan</a>
+          <a>Indeks Merek</a>
         </div>
         <div className="footer-content-app">
           <img height="40" src={playStore} alt="play store image" />
