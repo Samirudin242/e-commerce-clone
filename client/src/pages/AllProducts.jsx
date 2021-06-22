@@ -10,6 +10,7 @@ import InputForm from "../components/InputForm";
 import Carousel from "../components/Carousel";
 import Footer from "../components/Footer";
 import Card from "../components/Card";
+import Loading from "../components/Loading";
 
 const getAllDataProducts = gql`
     query getAllData {
@@ -69,7 +70,7 @@ function AllProducts() {
 
 
     if (networkStatus === NetworkStatus.refetch) return 'Refetching!';
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <Loading />
     if (error) return <p>Error :(</p>;
 
         // console.log(datas, "«««««");

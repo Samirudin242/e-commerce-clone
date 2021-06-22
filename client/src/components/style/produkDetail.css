@@ -44,6 +44,7 @@
   border: 1px solid #e5e7e9;
   border-radius: 10px;
   padding: 12px;
+  margin-left: 20px;
 }
 
 .card-detail-stock > p {
@@ -123,6 +124,10 @@
   background-color: white;
   font-size: 14px;
   font-weight: 800;
+}
+
+.button-stock-valid {
+  opacity: 0.2;
 }
 
 .detail-shop {
