@@ -11,6 +11,8 @@ const produkSchema = new Schema({
   shopper: String,
   place: String,
   feedback: String,
+  stocks: String,
+  stock: Number,
   createdAt: String,
 });
 

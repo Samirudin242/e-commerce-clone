@@ -8,15 +8,14 @@ module.exports = {
     async getProduks() {
       try {
         const produks = await Produk.find({});
-        // console.log(produk, "<<<<");
         return produks;
       } catch (error) {
         throw new Error(error.message);
       }
     },
-    async getProduk(_, { produkId }) {
+    async getProduk(_, { Id }) {
       try {
-        const produk = await Produk.findById(produkId);
+        const produk = await Produk.findById(Id);
         if (produk) {
           return produk;
         } else {

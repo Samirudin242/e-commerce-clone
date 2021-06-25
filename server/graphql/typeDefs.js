@@ -13,7 +13,9 @@ module.exports = gql`
     shopper: String
     place: String
     feedback: String
-    createdAt: String
+    stocks: String
+    stock: Int
+    createAt: Int
   }
 
   type User {
@@ -47,13 +49,13 @@ module.exports = gql`
 
   type Query {
     getProduks: [Produk]
-    getProduk(produkId: ID!): Produk
+    getProduk(Id: ID): Produk
     getProdukByType(type: String): [Produk]
   }
 
   type Mutation {
-    register(registerInput: RegisterInput): User!
-    login(email: String, password: String): User!
+    register(registerInput: RegisterInput): User
+    login(email: String, password: String): User
     createProduk(produkInput: ProdukInput): Produk
     # deleteProduk(postId: ID!): String!
   }
