@@ -38,6 +38,23 @@
   margin-top: 20px;
 }
 
+.produk-detail-discount {
+  margin-top: 10px;
+}
+
+.produk-detail-discount > span:nth-child(1) {
+  color: #ff5c84;
+  background-color: #ffeaef;
+  padding: 3px;
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+.produk-detail-discount > span:nth-child(2) {
+  font-size: 15px;
+  text-decoration: line-through;
+}
+
 .card-detail-stock {
   height: 289px;
   width: 268px;
@@ -118,12 +135,21 @@
   margin: 10px 0;
 }
 
-.button-stock > button:nth-child(2) {
+.link {
+  text-decoration: none;
+}
+
+.button-buy {
   border:#03ac0e 1px solid;
   color: #03ac0e;
   background-color: white;
   font-size: 14px;
   font-weight: 800;
+  display: block;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .button-stock-valid {

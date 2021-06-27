@@ -33,7 +33,7 @@ function InputForm() {
   } 
 
   return (
-    <div>
+    <div className="input-form-container">
       {showRegister && <Login closePage={() => setRegister()} className="register-form"/>}
     <div>
       <div className="header-top">

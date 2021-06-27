@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import {gql, useQuery} from "@apollo/client";
+import {Link} from "react-router-dom";
 import {AiFillPlusCircle, AiFillMinusCircle, AiFillShop, AiTwotoneStar} from "react-icons/ai";
 import {GoLocation} from "react-icons/go"; 
 import "../components/style/produkDetail.css";
@@ -42,7 +43,6 @@ function ProdukDetail() {
 
   const [total, setTotal] = useState(1);
   let [price, setPrice] = useState("");
-  // let a = ""
   useEffect( () => {
     document.title = "Produk Detail | React App";
 
@@ -51,11 +51,8 @@ function ProdukDetail() {
       const produkData = await data;
       if(discount) {
         await setPrice(moneyFormat(Math.round(Number(moneyConver(produkData?.getProduk.price)) - ((Number(produkData?.getProduk.discount)/100) * Number(moneyConver(produkData?.getProduk.price))))))
-        // a = moneyFormat(Math.round(Number(moneyConver(produkData?.getProduk.price)) - ((Number(produkData?.getProduk.discount)/100) * Number(moneyConver(produkData?.getProduk.price)))))
       }  else {
         await setPrice(produkData?.getProduk.price)
-        // a = produkData?.getProduk.price
-        // console.log(a);
       }
     }
 
@@ -120,7 +117,16 @@ if(data?.getProduk.discount) {
             <div className="dot"></div>
             <p><AiTwotoneStar style={{color: "#bdcc31", alignItems: "center"}}/> 5 (10 ulasan)</p>
           </div>
-          <p className="price-detail">Rp {price}</p>
+          {data?.getProduk.discount === null ? 
+          <p className="price-detail">Rp{data?.getProduk.price}</p> :
+          <div>
+            <p className="price-detail">Rp {moneyFormat(Math.round(Number(moneyConver(data?.getProduk.price)) - ((Number(data?.getProduk.discount)/100) * Number(moneyConver(data?.getProduk.price)))))}</p>
+            <div className="produk-detail-discount">
+              <span>{data?.getProduk.discount}%</span>
+              <span>Rp{data?.getProduk.price}</span>
+            </div>
+          </div>
+          }
           <div className="detail-shop">
             <AiFillShop size={50} style={{color: "#928d8d"}} />
             <div className="shop-information">
@@ -137,7 +143,6 @@ if(data?.getProduk.discount) {
               <div className="card-stock-input">
               <AiFillPlusCircle onClick={addTotal} className={`button-stock ${total === data?.getProduk.stock  ? "button-stock-valid": ""}`} size={25}/>
               <input onChange={({target}) => setTotal(target.value)} value={total} type="number" />
-              {/* <p>{total}</p> */}
               <AiFillMinusCircle onClick={lessTotal} className={`button-stock ${total === 1 ? "button-stock-valid": ""}`}  size={25}/>
               </div>
               <p>Stock <span className="number-stock">{data?.getProduk.stock}</span></p>
@@ -148,7 +153,9 @@ if(data?.getProduk.discount) {
           </div>
           <div className="button-stock">
               <button>+ Keranjang</button>
-              <button>Beli Langsung</button>
+              <Link className="link" to="/buy-product">
+              <button className="button-buy">Beli Langsung</button>
+              </Link>
           </div>
         </div>
       </div>

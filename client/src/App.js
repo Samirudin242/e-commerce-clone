@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 import AllProducts from "./pages/AllProducts";
 import ProductDetail from "./pages/ProdukDetail";
 import Register from "./components/Register";
-
+import BuyProduct from "./pages/BuyProduct";
 import "./App.css";
 
 function App() {
@@ -22,6 +22,7 @@ function App() {
             <AuthRoute exact path="/register" component={Register} />
             <Route exact path="/all-products" component={AllProducts} />
             <Route exact path="/product/:id" component={ProductDetail} />
+            <Route exact path="/buy-product" component={BuyProduct} />
           </div>
         </Router>
       </AuthProvider>
