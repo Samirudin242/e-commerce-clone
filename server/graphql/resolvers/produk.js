@@ -1,6 +1,7 @@
 const { AuthenticationError, UserInputError } = require("apollo-server");
 
 const Produk = require("../../model/Produk");
+const User = require("../../model/User");
 const checkAuth = require("../../utils/check-auth");
 
 module.exports = {
@@ -53,11 +54,6 @@ module.exports = {
       context
     ) {
       const user = checkAuth(context);
-
-      // if (body.trim() === "") {
-      //   throw new Error("Post body must not be empty");
-      // }
-
       const newProduk = new Produk({
         name,
         image,
@@ -73,54 +69,28 @@ module.exports = {
       });
 
       const produk = await newProduk.save();
-
-      // context.pubsub.publish("NEW_POST", {
-      //   newPost: post,
-      // });
-
       return produk;
     },
-    //     async deletePost(_, { postId }, context) {
-    //       const user = checkAuth(context);
+    async addProductToCart(_, { userEmail, productId }, context) {
+      const { email } = checkAuth(context);
 
-    //       try {
-    //         const post = await Post.findById(postId);
+      const user = await User.findOne({ email: userEmail });
+      const product = await Produk.findById(productId);
+      if (email === user.email) {
+        user.carts.unshift({
+          name: product.name,
+          image: product.image,
+          price: product.price,
+          discount: product.discount,
+          shopper: product.shopper,
+          place: product.place,
+        });
 
-    //         if (post.email === user.email) {
-    //           await post.delete();
-    //           return "Post deleted successfully";
-    //         } else {
-    //           throw new AuthenticationError("Action is not allowed");
-    //         }
-    //       } catch (error) {
-    //         throw new Error(error);
-    //       }
-    //     },
-    //     likePost: async (_, { postId }, context) => {
-    //       const { email, username } = checkAuth(context);
-
-    //       const post = await Post.findById(postId);
-
-    //       if (post) {
-    //         if (post.likes.find((like) => like.email === email)) {
-    //           post.likes = post.likes.filter((like) => like.email !== email);
-    //         } else {
-    //           post.likes.push({
-    //             email,
-    //             username,
-    //             createdAt: new Date().toISOString(),
-    //           });
-    //         }
-    //         await post.save();
-    //         return post;
-    //       } else {
-    //         throw new UserInputError("Post not found");
-    //       }
-    //     },
+        await user.save();
+        return user;
+      } else {
+        throw new UserInputError("Your not authorized");
+      }
+    },
   },
-  //   Subscription: {
-  //     newPost: {
-  //       subscribe: (_, __, { pubsub }) => pubsub.asyncIterator("NEW_POST"),
-  //     },
-  //   },
 };

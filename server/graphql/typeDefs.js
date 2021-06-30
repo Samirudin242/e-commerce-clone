@@ -18,12 +18,22 @@ module.exports = gql`
     createAt: Int
   }
 
+  type Cart {
+    name: String
+    image: String
+    price: String
+    discount: String
+    shopper: String
+    place: String
+  }
+
   type User {
     id: ID
     name: String!
     email: String!
     token: String!
     location: String
+    carts: [Cart]
     createdAt: String!
   }
 
@@ -57,6 +67,6 @@ module.exports = gql`
     register(registerInput: RegisterInput): User
     login(email: String, password: String): User
     createProduk(produkInput: ProdukInput): Produk
-    # deleteProduk(postId: ID!): String!
+    addProductToCart(userEmail: String, productId: ID): User
   }
 `;

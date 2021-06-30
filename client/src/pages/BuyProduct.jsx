@@ -3,6 +3,7 @@ import React from "react";
 import InputForm from "../components/InputForm";
 import Footer from "../components/Footer";
 import CardCart from "../components/CardCart";
+import SendAndBuy from "../components/SendAndBuy";
 import "../components/style/buyProduct.css";
 
 function BuyProduct() {
@@ -22,6 +23,7 @@ function BuyProduct() {
             </div>
           </div>
           <CardCart />
+         <SendAndBuy />
         </div>
         <div className="box-buy">
           <h3>Ringkasan Belanja</h3>

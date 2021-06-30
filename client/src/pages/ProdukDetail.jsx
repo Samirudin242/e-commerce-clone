@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
-import {gql, useQuery} from "@apollo/client";
+import {gql, useQuery, useMutation} from "@apollo/client";
 import {Link} from "react-router-dom";
 import {AiFillPlusCircle, AiFillMinusCircle, AiFillShop, AiTwotoneStar} from "react-icons/ai";
 import {GoLocation} from "react-icons/go"; 
 import "../components/style/produkDetail.css";
-
+import { AuthContext } from "../context/auth";
 import InputForm from "../components/InputForm";
 import Footer from "../components/Footer";
 import Loading from "../components/Loading";
@@ -27,18 +27,44 @@ query getProduk($produkId: ID) {
     feedback
     }
 }
-
 `
+const ADD_CART = gql`
+mutation addProductToCart($email: String, $Id: ID) {
+  addProductToCart(userEmail: $email, productId: $Id) {
+    carts {
+    name
+    image
+    price
+    discount
+    shopper
+    place
+    }
+  }
+}
+`
+
+
 
 
 
 function ProdukDetail() {
   const { id } = useParams();
+  const {user} = useContext(AuthContext);
 
   const {loading, error, data} = useQuery(GET_PRODUK, {
       variables: {
               produkId: id,
       }
+  })
+
+  const [addCart, {_}] = useMutation(ADD_CART, {
+    variables: {
+       email: user.email,
+       Id: id
+    },
+    update(_, {data: {addProductToCart: {carts}}}) {
+      console.log(carts, "<<<<")
+    }
   })
 
   const [total, setTotal] = useState(1);
@@ -86,6 +112,10 @@ if(data?.getProduk.discount) {
       setPrice(moneyFormat(Number(moneyConver(price)) - Number(moneyConver(a))))
     }
 
+  }
+
+  function addProductToCart() {
+    addCart();
   }
 
 
@@ -152,7 +182,7 @@ if(data?.getProduk.discount) {
               <p>{price}</p>
           </div>
           <div className="button-stock">
-              <button>+ Keranjang</button>
+              <button onClick={addProductToCart}>+ Keranjang</button>
               <Link className="link" to="/buy-product">
               <button className="button-buy">Beli Langsung</button>
               </Link>

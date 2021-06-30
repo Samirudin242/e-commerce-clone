@@ -29,8 +29,10 @@ function Login(props) {
 
   const [loginUser, {loading}] = useMutation(LOGIN_USER, {
     update(_, {data: {login: userData}}) {
+      console.log(userData, ",<<<<<")
       context.login(userData)
       history.push("/")
+      closePage();
     }, 
     variables: {
       email,
@@ -42,6 +44,7 @@ function Login(props) {
   const isInvalid = password == "" || email == "";
 
   function login() {
+    console.log("tesss")
     loginUser();
   }
 
@@ -65,7 +68,7 @@ function Login(props) {
           <input onChange={({target}) => setPassword(target.value)} id="password" type="password" className="" />
         </div>
       </div>
-        <button onClick={login, closePage} disabled={isInvalid} className={`button-login-form ${isInvalid && 'disabled'}`}>Masuk</button>
+        <button onClick={login} disabled={isInvalid} className={`button-login-form ${isInvalid && 'disabled'}`}>Masuk</button>
     </div>
   );
 }

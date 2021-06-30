@@ -6,6 +6,16 @@ const userSchema = new Schema({
   email: String,
   password: String,
   createdAt: String,
+  carts: [
+    {
+      name: String,
+      image: String,
+      price: String,
+      discount: String,
+      shopper: String,
+      place: String,
+    },
+  ],
 });
 
 module.exports = model("user", userSchema);
